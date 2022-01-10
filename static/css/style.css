@@ -6,7 +6,7 @@
 
 }
 
-.hero{
+body{
 
     background: #1d2026;
     min-height: 100vh;
@@ -17,27 +17,28 @@
 } 
 
 nav .menu-img{
-    width: 25px;
-    margin-right: 20px;
+    width: /*2.5%;*/25px;
+    margin: 1% 1% 1% 1%;
+    /*margin-right: 20px;*/
     cursor: pointer;
 }
 
 nav{
-    display: flex;
+    display: block;
     align-items: center;
-    padding: 20px 8%;
+    padding: 2% 4% 0% 4%;/*20px 8%;*/
 }
 
 nav .logo{
-    width: 160px;
+    width: /*14%;*/160px;
     cursor: pointer;
 }
 
 button{
     background: #efefef;
-    height: 30px;
-    width: 60px;
-    margin-left: 1005px;
+    height: /*29%*/30px;
+    width: /*5.5%;*/60px;
+    margin-left: 72%;
     border-radius: 20px;
     border: 0;
     outline: 0;
@@ -51,7 +52,7 @@ button span{
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    margin-left: 2px;
+    margin-left: 3.34%;
     transition: background 0.5s, margin-left 0.5s;
 }
 
