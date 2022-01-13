@@ -25,7 +25,17 @@
                         <div class="tcontainer">
                             
                             {% csrf_token %}
-                            {{form.as_p}}
+
+                            {% for field in form %}
+                            <p>
+                                {% if field.label == 'To' %}
+                                    <div class="to">  {{field.label_tag}} </div>  {{field}}
+                                {% else %}
+                                     {{field.label_tag}} {{field}} 
+                                {% endif %}
+                                {{field.errors}}
+                            </p>
+                            {% endfor %}
 
                         </div>        
                         

@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse 
 from .forms import EventRegistration,ParticipantRegistration,Dashboard
-from .models import Event, Participant,Dashboardm
+from .models import Event, Participant
+from django.core.mail import send_mail
+import os
+from twilio.rest import Client
 
 # Create your views here.
 
@@ -20,8 +23,24 @@ def showE_r(request):
                rd = fm.cleaned_data['R_d_date']
                he = fm.cleaned_data['H_email']
                hp = fm.cleaned_data['H_password']
+
+               data = [ he ]
+
                reg = Event(E_name=en,Description=de,Location=lo,s_date=sd,e_date=ed,R_d_date=rd,H_email=he,H_password=hp)
-               reg.save()
+               reg.save() 
+               message = '''
+
+               Thank you for registration your event with us.
+
+               Event Name: {}
+               Event ID: {}
+
+               you can now review the participation in your event through our portal.
+               
+               Regards,
+               Emanage web app.
+               '''.format( en , reg.id )
+               send_mail("Event Registration Successful",message,'',data,fail_silently=False)
                fm = EventRegistration() 
      else:
           fm = EventRegistration()
@@ -40,6 +59,18 @@ def showP_r(request):
                np = fm.cleaned_data['N_people']
                reg = Participant(name=n,c_no=cn,email=em,Event=e,R_type=r,N_people=np)
                reg.save()
+
+               account_sid = 'AC3f5d5d240cc7cbe2dbfdbc300f0f13a5'
+               auth_token = '50bd8d9fbc2dc8092a345524708e114f'
+               client = Client(account_sid, auth_token)
+
+               message = client.messages \
+                               .create(
+                                   body=f"Participant ID : {reg.id} \nEvent name : {reg.Event} \nLocation : {reg.Event.Location} \n Date : {reg.Event.s_date}-{reg.Event.e_date}\nParticipation type : {reg.R_type} \nNo of people : {reg.N_people}",
+                                   from_='+17407593742',
+                                   to = '+91'+str(reg.c_no)
+                               )
+
                fm = ParticipantRegistration()
 
      else:

@@ -9,7 +9,6 @@ class EventRegistration(forms.ModelForm):
         fields = ['E_name','Description','Location','s_date','e_date','R_d_date','H_email','H_password']
         labels = {'E_name':'Event name','s_date':'From','e_date':'To','R_d_date':'Registration Deadline','H_email':'Host E-mail','H_password':'Host password'}
         help_text = {'E_name':'Enter Event name','Description':'Description here...','Location':'Enter location','s_date':'dd-mm-yyyy','e_date':'dd-mm-yyyy','R_d_date':'dd-mm-yyyy','H_email':'Enter email','H_password':'Enter password'}
-        error_messages = {'E_name':{'required':'please Enter event name'}}
         widgets = {'H_password':forms.PasswordInput(attrs={'placeholder':'Enter host password'}),
                    'E_name':forms.TextInput(attrs={'placeholder':'Enter Event name'}),
                    'Description':forms.Textarea(attrs={'placeholder':'Enter description here...'}),
@@ -17,7 +16,13 @@ class EventRegistration(forms.ModelForm):
                    's_date':forms.DateInput(attrs={'placeholder':'dd-mm-yyyy','type':'datetime-local'}),
                    'e_date':forms.DateInput(attrs={'placeholder':'dd-mm-yyyy','type':'datetime-local'}),
                    'R_d_date':forms.DateInput(attrs={'placeholder':'dd-mm-yyyy','type':'datetime-local'}),
-                   'H_email':forms.EmailInput(attrs={'placeholder':'Enter e-mail id'}),}
+                   'H_email':forms.EmailInput(attrs={'placeholder':'Enter e-mail id'})}
+    def clean_E_name(self):
+        valname = self.cleaned_data['E_name']
+        if len(valname) < 4 :
+            raise forms.ValidationError('Enter more than or equal 4 char')
+        return valname
+
 
 class ParticipantRegistration(forms.ModelForm):
     class Meta:

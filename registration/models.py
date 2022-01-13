@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.forms.fields import DateTimeField
 
 # Create your models here.
@@ -12,7 +13,7 @@ class Event(models.Model):
     R_d_date = models.DateTimeField()
     H_email = models.EmailField()
     H_password = models.CharField(max_length=100)
-
+    
     def __str__(self):
         return self.E_name
 
