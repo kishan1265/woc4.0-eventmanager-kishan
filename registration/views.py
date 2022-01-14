@@ -61,7 +61,7 @@ def showP_r(request):
                reg.save()
 
                account_sid = 'AC3f5d5d240cc7cbe2dbfdbc300f0f13a5'
-               auth_token = '50bd8d9fbc2dc8092a345524708e114f'
+               auth_token = '6ac57264040bc7ddfbe9703412499ce5'
                client = Client(account_sid, auth_token)
 
                message = client.messages \
