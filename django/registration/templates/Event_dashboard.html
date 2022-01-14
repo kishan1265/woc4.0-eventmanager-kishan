@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
+        <title>Event_dashboard</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/E_d_style.css' %}">
+    </head>
+
+    <body>
+
+        <div class="hero">
+
+            <nav>
+                
+                <a href="javascript:history.go(-1)"onMouseOver="self.status.referrer;return true">back to home</a>
+                <h1>Event Dashboard</h1>
+
+            </nav>
+
+            <div class="container">
+                <div class="user_detail">
+                    <form action="" method="POST">
+                        <div class="tcontainer">
+                            
+                            {% csrf_token %}
+                            {{form2.as_p}}
+
+                        </div>        
+                        
+                        <div class="button">
+                            <input type="submit" value="Registration">
+                        </div>
+                        
+                    
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    
+           
+    </body>
+
+</html>
