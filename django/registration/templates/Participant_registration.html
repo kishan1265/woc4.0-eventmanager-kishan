@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
+        <title>Participant_registration</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/P_r_style.css' %}">
+    </head>
+
+    <body>
+
+        <div class="hero">
+
+            <nav>
+                
+                <a href="javascript:history.go(-1)"onMouseOver="self.status.referrer;return true">back to home</a>
+                <h1>Participant Registration</h1>
+
+            </nav>
+
+            <div class="container">
+                <div class="user_detail">
+                    <form action="" method="POST">
+                        <div class="tcontainer">
+                            
+                            {% csrf_token %}
+
+                            
+                            {% for field in form1 %}
+                                {% if field.label == 'event' %}
+                                    <div class="eve"> <p> {{field.label_tag}} {{field}} </p> </div>
+                                {% else %}
+                                    <p> {{field.label_tag}} {{field}}  </p>
+                                {% endif %}
+                                {{field.errors}}
+                            {% endfor %}
+
+                        </div>        
+                        
+                        <div class="button">
+                            <input type="submit" value="Registration">
+                        </div>
+                        
+                    
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    
+           
+    </body>
+
+</html>
