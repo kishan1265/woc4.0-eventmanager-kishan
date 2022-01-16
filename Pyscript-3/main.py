@@ -1,9 +1,9 @@
-my_dict = {'Name':[]}
+#my_dict = {'Name':[]}
 
 contactbook = {'kenil':[1212121244,4554545455],'abhay':[4589631278]}
 
 #to add contact (name and number both)
-def Add_contact():
+def add_contact():
     name = input("Enter Name : ")
     no = int((input("how many mobile number are you want to add : ")))
     id = 0
@@ -14,6 +14,7 @@ def Add_contact():
         no = no - 1
         id = id + 1
     contactbook[name]=list 
+    
 
 #to display all contact 
 def all_contacts_list():
@@ -105,12 +106,12 @@ def delete_mobile_number(name):
     contactbook[name].remove(contactbook[name][id-1])
 
 # this function is for add one mobile number in saved contact
-def Add_mobile_number(name):
+def add_mobile_number(name):
     number = int(input("Enter the number which you want to add : "))
     contactbook[name].append(number)
 
 # this function is for edit mobile number
-def Edit_mobile_number():
+def edit_mobile_number():
     name = input("enter the name of person whose are you tring to edit : ")
     if not system_find_number(name):
         print("we have no any contact save with this name : ",name)
@@ -128,7 +129,7 @@ def Edit_mobile_number():
             delete_mobile_number(name)
             break
         elif choice == 3:
-            Add_mobile_number(name)
+            add_mobile_number(name)
             break
         else:
             print("Invalid Choice")
@@ -142,8 +143,9 @@ while 1:
     print("\n")
 
     if choice == 1:
-        Add_contact()
+        add_contact()
     elif choice == 2:
+        contactbook =  dict(sorted(contactbook.items()))
         all_contacts_list()
     elif choice == 3:
         find_contact()
@@ -152,7 +154,7 @@ while 1:
     elif choice == 5:
         Edit_name()
     elif choice == 6:
-        Edit_mobile_number()
+        edit_mobile_number()
     elif choice == 7:
         break
     else:

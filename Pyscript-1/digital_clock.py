@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import ttk
 from time import strftime
 
 digital_clock = Tk()
