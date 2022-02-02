@@ -60,16 +60,16 @@ def showP_r(request):
                reg = Participant(name=n,c_no=cn,email=em,Event=e,R_type=r,N_people=np)
                reg.save()
 
-               account_sid = 'AC3f5d5d240cc7cbe2dbfdbc300f0f13a5'
-               auth_token = '6ac57264040bc7ddfbe9703412499ce5'
-               client = Client(account_sid, auth_token)
+               #account_sid = 'AC3f5d5d240cc7cbe2dbfdbc300f0f13a5'
+               #auth_token = 'd547e51e2d7e98a72225a5ce04674065'
+               #client = Client(account_sid, auth_token)
 
-               message = client.messages \
-                               .create(
-                                   body=f"Participant ID : {reg.id} \nEvent name : {reg.Event} \nLocation : {reg.Event.Location} \n Date : {reg.Event.s_date}-{reg.Event.e_date}\nParticipation type : {reg.R_type} \nNo of people : {reg.N_people}",
-                                   from_='+17407593742',
-                                   to = '+91'+str(reg.c_no)
-                               )
+               #message = client.messages \
+               #                .create(
+               #                    body=f"Participant ID : {reg.id} \nEvent name : {reg.Event} \nLocation : {reg.Event.Location} \n Date : {reg.Event.s_date}-{reg.Event.e_date}\nParticipation type : {reg.R_type} \nNo of people : {reg.N_people}",
+               #                    from_='+17407593742',
+               #                    to = '+91'+str(reg.c_no)
+               #                )
                fm = ParticipantRegistration()
 
      else:

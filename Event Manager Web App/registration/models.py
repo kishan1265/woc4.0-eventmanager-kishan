@@ -1,6 +1,7 @@
 from django.db import models
 from django import forms
 from django.forms.fields import DateTimeField
+import datetime
 
 # Create your models here.
 
@@ -16,6 +17,14 @@ class Event(models.Model):
     
     def __str__(self):
         return self.E_name
+
+def get_event():
+    E_list = []
+    for event in Event:
+        if(event.R_d_date < datetime.datetime.now()):
+            E_list.append(event)
+    return E_list
+
 
 class Participant(models.Model):
     name = models.CharField(max_length=70)
