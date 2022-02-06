@@ -1,0 +1,145 @@
+@media only screen and ( max-width:600px ){
+
+    .lamp-container{
+        left: 35%;
+        width: 30%;
+    }
+
+    .lamp{
+        margin-left: 30%;
+        width: 100%;
+     }
+    
+    .art{
+        margin-left: -60%;
+        margin-top: 10%;
+        width: 375%;
+    }
+
+    .light{
+        margin-left: 23%;
+        width: 400%;
+    }
+    
+    .text-container{
+        font-size: 100%;
+        margin-top: 100%;
+        margin-left: 15%;
+        margin-bottom: 10%;
+    }
+    
+    .text-container h1{
+        font-size: 300%;
+    }
+    
+    .text-container a{
+        font-size: 100%; 
+        margin-left: 5%; 
+        width: 80%; 
+    
+    }
+    
+    nav .menu-img{
+        width: 6%;
+    }
+    
+    nav{
+        align-items: center;
+        padding: 2% 4% 0% 4%;/*20px 8%;*/
+    }
+    
+    nav .logo{
+        width: 30%;
+        margin-bottom: -1.5%;
+    }
+    
+    button{
+        height: 28px;
+        width: 56px;
+        margin-left: 39%;
+        border-radius: 23px;
+    }
+    
+    button span{
+        height: 24px;
+        width: 24px;
+        margin-left: 3%;
+    }
+    
+        
+        
+}
+
+@media only screen and ( max-width:320px ){
+
+    .lamp-container{
+        left: 35%;
+        width: 30%;
+    }
+
+    .lamp{
+        margin-left: 15%;
+        width: 100%;
+     }
+    
+    .art{
+        margin-left: -65%;
+        margin-top: 10%;
+        width: 325%;
+    }
+
+    .light{
+        margin-left: 10%;
+        width: 400%;
+    }
+    
+    .text-container{
+        font-size: 100%;
+        margin-top: 100%;
+        margin-left: 15%;
+        margin-bottom: 10%;
+    }
+    
+    .text-container h1{
+        font-size: 300%;
+        font-weight: 400%;
+    }
+    
+    .text-container a{
+        font-size: 100%; 
+        margin-left: 5%;  
+        width: 80%; 
+    
+    }
+    
+    nav .menu-img{
+        width: 6%;
+    }
+    
+    nav{
+        align-items: center;
+        padding: 2% 4% 0% 4%;/*20px 8%;*/
+    }
+    
+    nav .logo{
+        width: 30%;
+        margin-bottom: -1.5%;
+    }
+    
+    button{
+        height: 28px;
+        width: 56px;
+        margin-left: 39%;
+        border-radius: 23px;
+    }
+    
+    button span{
+        height: 24px;
+        width: 24px;
+        margin-left: 3%;
+    }
+    
+        
+        
+}
+

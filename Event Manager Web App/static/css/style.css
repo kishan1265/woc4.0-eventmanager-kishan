@@ -3,7 +3,6 @@
     padding: 0;
     font-family: 'poppins',sans-serif;
     box-sizing: border-box;
-
 }
 
 body{
@@ -14,12 +13,12 @@ body{
 
 } 
 
-.hero{
+/*.hero{
     height: 100%;
-}
+}*/
 
 nav .menu-img{
-    width: /*2.5%;*/25px;
+    width: /*2.5%;*/2.5%;
     margin: 1% 1% 1% 1%;
     /*margin-right: 20px;*/
     cursor: pointer;
@@ -32,7 +31,7 @@ nav{
 }
 
 nav .logo{
-    width: /*14%;*/160px;
+    width: /*14%;*/12%;
     cursor: pointer;
 }
 
@@ -67,8 +66,8 @@ button span{
 }
 
 .lamp{
-   width: 100%;
-}
+    width: 100%;
+ }
 
 .art{
     position: absolute;
@@ -86,7 +85,7 @@ button span{
     left: 50%;
     transform: translateX(-50%);
     margin-left: -10px;
-    width: 700px;
+    width: 400%;
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -94,12 +93,11 @@ button span{
 .text-container{
     max-width: 600px;
     margin-top: 7%;
-    margin-left: 50%;
+    margin-left: 48%;
 }
 
 .text-container h1{
-    font-size: 80px;
-    font-weight: 400;
+    font-size: calc(3vw + 3vh + 1.5vmin);
 }
 
 .text-container a{
@@ -109,12 +107,11 @@ button span{
     padding: 14px 40px;
     display: inline-block;
     color: #fff;
-    font-size: 18px;
+    font-size: calc(0.7vw + 0.7vh + 0.3vmin);
     margin-top: 30px;
-    margin-right: 250px;
-    margin-left: 100px;
+    margin-left: 15%;
     border-radius: 30px;
-    width: 270px;
+    width: 50%;
 
 }
 
@@ -129,5 +126,8 @@ button span{
 
 .on{
     opacity: 1;
+
 }
+
+
 
