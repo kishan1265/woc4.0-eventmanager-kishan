@@ -8,10 +8,10 @@ Technologies incorporated:
     Database: SQLite (covered in Django, not to be learnt separately)
 
 Concepts involved:
-    Class-Object Structure
-    Object Relational Mapper (ORM)
-    URL Mapping
-    View Configuration
-    Request Handling
-    Page Rendering
+    Class-Object Structure\\
+    Object Relational Mapper (ORM)\\
+    URL Mapping\\
+    View Configuration\\
+    Request Handling\\
+    Page Rendering\\
 
